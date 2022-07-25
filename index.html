@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IT registry</title>
+
+<script type="module" src="/JS/login.js"></script>
+<link rel="stylesheet" href="/CSS/Style.css">
+</head>
+
+
+
+<body>
+
+<h1>Welcome to the Rhenus IT register</h1>
+<a></a>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <div class="fadeIn first">
+            <img src="/CSS/RhenusIcon.jpg" id="icon" alt="Company Icon">
+        </div>
+
+        <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+            <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input id="LOGButton" type="button" class="fadeIn fourth" value="Log In" >
+
+        </form>
+
+        <div id="formFooter"> 
+            <a class="underlineHover" href="/Main.html">Forgot Password?</a>
+            <p id="Para"></p>
+        </div>
+        
+    </div>
+</div>
+
+<script type="module" src="./JS/login.js"></script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyADxKdEJe6XeTuLZzxKjKS6JOPPbvTC7X0",
+      authDomain: "rhenusitregister.firebaseapp.com",
+      projectId: "rhenusitregister",
+      storageBucket: "rhenusitregister.appspot.com",
+      messagingSenderId: "104795139606",
+      appId: "1:104795139606:web:0b142b611ed3e64856cf37",
+      measurementId: "G-X3FX1Y76D6"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+</body>
+
+
+
+</html>
+
+
