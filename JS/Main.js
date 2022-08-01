@@ -20,7 +20,7 @@ const analytics = getAnalytics(app);
 const auth =  getAuth();
 const db = getFirestore(app);
 
-const Title = document.getElementById("Titleinput");
+
 
 const querySnapshot = await getDocs(collection(db, "UserDetails"));
 querySnapshot.forEach((doc) => {
@@ -37,7 +37,20 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
-    db.collection("UserDetails").doc(uid)
+    getDoc(doc(db,"UserDetails",uid)).then(docSnap =>{
+      if(docSnap.exists)
+      {
+        
+        document.getElementById("H").textContent = "Welcome " + docSnap.data()['Name'];
+      }
+      else
+      {
+        console.log("Does not work")
+
+      }
+    })
+    
+   /* db.collection("UserDetails").doc(uid)
   .withConverter(UserConverter)
   .get().then((doc) => {
     if (doc.exists){
@@ -49,7 +62,7 @@ onAuthStateChanged(auth, (user) => {
       console.log("No such document!");
     }}).catch((error) => {
       console.log("Error getting document:", error);
-    });
+    });*/
    
   
 }}
